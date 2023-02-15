@@ -14,10 +14,21 @@ use App\Http\Controllers\MainController;
 |
 */
 
-Route :: get('/', [MainController::class, 'home'])->name('home');
+//Home
+Route::get('/', [MainController::class, 'home'])->name('home');
 
-Route :: get('/product', [MainController::class, 'products'])->name('product.home');
+//Show products
+Route::get('/product', [MainController::class, 'products'])->name('product.home');
 
-Route :: get('/product/create', [MainController::class, 'productCreate'])->name('product.create');
+//Create products
+Route::get('/product/create', [MainController::class, 'productCreate'])->name('product.create');
+//Store the created products
+Route::post('/product/create', [MainController::class, 'productStore'])->name('product.store');
 
-Route :: post('/product/create', [MainController::class, 'productStore'])->name('product.store');
+//Edit products
+Route::get('/product/edit/{product}', [MainController::class, 'productEdit'])-> name('product.edit');
+//Update the edited products
+Route::post('/product/edit/{product}', [MainController::class, 'productUpdate'])-> name('product.update');
+
+//Delete products
+Route::get('/product/delete/{product}', [MainController::class, 'productDelete'])-> name('product.delete');

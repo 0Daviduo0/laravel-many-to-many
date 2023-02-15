@@ -6,7 +6,7 @@
     <form action="{{ route('product.store') }}" method="POST">
         @csrf
             <label for="name">Nome prodotto</label>
-            <input type="text" name="name"><br>
+            <input type="text" name="name"> <br>
 
             <label for="description">Descrizione</label>
             <input type="text" name="description"> <br>

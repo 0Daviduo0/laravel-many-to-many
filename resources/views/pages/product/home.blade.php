@@ -10,9 +10,9 @@
 
                 [{{ $product -> code }}] {{ $product -> name }} <br>
                 {{ $product -> typology -> name }} <br>
-                {{ $product -> typology -> digital ? "📲" : "📦" }} <br> <br>
+                {{ $product -> typology -> digital ? "Fisico 📲" : "Digitale 📦" }}
 
-            </li>
+            </li> <br> <br>
         @endforeach
     </ul>
 

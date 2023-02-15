@@ -12,9 +12,11 @@
 
                     [{{ $product -> code }}] {{ $product -> name }} <br>
                     {{ $product -> typology -> name }} <br>
-                    {{ $product -> typology -> digital ? "📲" : "📦" }} <br> <br>
-                    
-                </li>
+                    {{ $product -> typology -> digital ? "Digitale 📲" : "Fisico 📦" }} <br>
+                    <a href="{{ route('product.edit', $product) }}">Modifica 📝 </a> | 
+                    <a href="{{ route('product.delete', $product) }}"> Cancella ❌</a>
+
+                </li> <br> <br>
             @endforeach
         </ul>
     @endforeach
