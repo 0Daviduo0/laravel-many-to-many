@@ -37,7 +37,7 @@
 
         @endforeach
 
-            <input type="submit" value="CREATE NEW PRODUCT">
+            <input type="submit" value="CREA NUOVO PRODOTTO">
     </form>
 
 @endsection
