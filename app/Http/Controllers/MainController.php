@@ -12,26 +12,18 @@ class MainController extends Controller
 {
     
     public function home() {
-
         $categories = Category :: all();
-
-        return view('pages.home', compact('categories'));
+    return view('pages.home', compact('categories'));
     }
     public function products() {
-
         $products = Product :: all();
-
-        return view('pages.product.home', compact('products'));
+    return view('pages.product.home', compact('products'));
     }
 
     public function productCreate() {
-
         $typologies = Typology :: all();
         $categories = Category :: all();
-
-        return view('pages.product.create', 
-                compact('categories', 'typologies')
-            );
+    return view('pages.product.create', compact('categories', 'typologies'));
     }
     public function productStore(Request $request) {
 
@@ -48,13 +40,10 @@ class MainController extends Controller
 
         $code = rand(10000, 99999);
         $data['code'] = $code;
-
         $product = Product :: make($data);
         $typology = Typology :: find($data['typology_id']);
-
         $product -> typology() -> associate($typology);
         $product -> save();
-        
         $categories = Category :: find($data['categories']);
         $product -> categories() -> attach($categories);
 
