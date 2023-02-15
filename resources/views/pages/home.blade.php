@@ -2,8 +2,8 @@
 
 @section('content')
     
-    <h1>Prodotti</h1>
-    <a href="{{ route('product.create') }}">CREA NUOVO PRODOTTO</a>
+    <h1>Home Prodotti</h1>
+    <h5>Per creare, modificare e eliminare prodotti <a href="{{ route('product.home') }}">Clicca qui</a></h5>
     @foreach ($categories as $category)
         <h2>{{ $category -> name }}</h2>
         <ul>
@@ -12,9 +12,7 @@
 
                     [{{ $product -> code }}] {{ $product -> name }} <br>
                     {{ $product -> typology -> name }} <br>
-                    {{ $product -> typology -> digital ? "Digitale 📲" : "Fisico 📦" }} <br>
-                    <a href="{{ route('product.edit', $product) }}">Modifica 📝 </a> | 
-                    <a href="{{ route('product.delete', $product) }}"> Cancella ❌</a>
+                    {{ $product -> typology -> digital ? "Digitale 📲" : "Fisico 📦" }}
 
                 </li> <br> <br>
             @endforeach
